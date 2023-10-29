@@ -22,12 +22,13 @@ public class Course {
 	@Id
 	@SequenceGenerator(
 	name = "course_id_sequence", 
+	sequenceName = "course_id_sequence",
 	allocationSize = 1
 	)
 	@GeneratedValue(
 	generator = "course_id_sequence", strategy = GenerationType.SEQUENCE
 	)
- 	private String courseId;
+ 	private Long courseId;
  	private String courseTitle;
  	private Integer credits;
 

@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication()
-@ComponentScan(basePackages = "com.example.demo")
+@ComponentScan(basePackages = "com.example")
 public class DemoApplication {
 
 	public static void main(String[] args) {

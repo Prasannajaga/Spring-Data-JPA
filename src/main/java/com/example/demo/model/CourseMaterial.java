@@ -1,7 +1,9 @@
 
 package com.example.demo.model;
 
- import jakarta.persistence.Entity;
+ import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -13,26 +15,29 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
+@ToString
 @Table(name = "tbl_course_Material")
 public class CourseMaterial {
 	
 	@Id
 	@SequenceGenerator(
-	name = "course_id_sequence", 
+	name = "course_material_id_sequence", 
+	sequenceName = "course_material_id_sequence",
 	allocationSize = 1
 	)
 	@GeneratedValue(
-	generator = "course_id_sequence", strategy = GenerationType.SEQUENCE
+	generator = "course_material_id_sequence", strategy = GenerationType.SEQUENCE
 	)
- 	private String courseMaterialId;
+ 	private Long courseMaterialId;
  	private String url;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(
 			name  = "course_id" , referencedColumnName  = "courseId"
 	)

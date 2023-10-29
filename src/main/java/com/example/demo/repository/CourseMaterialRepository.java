@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.model.CourseMaterial;
 
 @Repository
-public interface CourseMaterialRepository extends BaseRepository<CourseMaterial, String>{
+public interface CourseMaterialRepository extends BaseRepository<CourseMaterial, Long>{
 
 }
