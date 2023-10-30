@@ -49,8 +49,7 @@ public class CriteriaTemplate<T> {
 	  
 	
 	
-	// PREDICATES 
-	
+	// PREDICATES  
 	private Predicate equalPredicate(String propertyName, String value) { 
 		return crBuilder.equal(root.get(propertyName),value);
 	}

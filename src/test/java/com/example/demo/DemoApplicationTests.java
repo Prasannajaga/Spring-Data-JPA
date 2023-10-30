@@ -10,8 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.example.demo.customTemplate.CriteriaTemplate;
 import com.example.demo.customTemplate.PostgreSqlTemplate; 
 import com.example.demo.model.Student;
-import com.example.demo.repository.StudentRepository;
-
+import com.example.demo.repository.StudentRepository; 
 import jakarta.persistence.EntityManager;
 
 @SpringBootTest

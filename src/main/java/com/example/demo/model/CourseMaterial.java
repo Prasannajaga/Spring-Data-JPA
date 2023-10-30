@@ -22,7 +22,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @Builder
 @Entity
-@ToString
+@ToString(exclude = "course")
 @Table(name = "tbl_course_Material")
 public class CourseMaterial {
 	
@@ -37,7 +37,7 @@ public class CourseMaterial {
 	)
  	private Long courseMaterialId;
  	private String url;
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL  , fetch =  FetchType.LAZY)
 	@JoinColumn(
 			name  = "course_id" , referencedColumnName  = "courseId"
 	)

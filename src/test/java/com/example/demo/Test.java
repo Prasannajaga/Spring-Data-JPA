@@ -15,11 +15,11 @@ public class Test {
 	
 	public static void main(String[] args) {
 		
-//		Test test = new Test();
-		System.err.println();
-//		Class<?> n  = test.getClass();
-//		System.err.println(n.getModifiers() + n.getPackageName() +  n.descriptorString());
+		
  	}
+	public void sathish() {
+		
+	}
 }
 
 @Component

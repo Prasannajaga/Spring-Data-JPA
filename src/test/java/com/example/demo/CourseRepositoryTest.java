@@ -40,6 +40,12 @@ public class CourseRepositoryTest {
 	}
 	
 	@Test
+	public void getAllCouse() {
+		List<Course> courses = courseRepository.findAll();
+		System.err.println("COURSESS  " + courses );
+	}
+	
+	@Test
 	public void GetAllMAterial() {
 		CriteriaTemplate<Course> material = new CriteriaTemplate<Course>(manager, Course.class);
 		List<Course> materials = material.findAll();
