@@ -36,6 +36,10 @@ public class CriteriaTemplate<T> {
 		return entityManager.createQuery(crQuery).getResultList();
 	}
 	
+	public List<T> customQuery(String query){
+		return entityManager.createQuery(query).getResultList();
+	}
+	
 	public List<T> findByContainsPropertyName(String propertyName , String value){
 		crQuery.where(containsPredicate(propertyName, value));
 		return entityManager.createQuery(crQuery).getResultList();

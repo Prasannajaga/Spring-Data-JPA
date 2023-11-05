@@ -9,10 +9,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.example.demo.customTemplate.CriteriaTemplate;
 import com.example.demo.model.Course;
 import com.example.demo.model.CourseMaterial;
+import com.example.demo.model.Teacher;
 import com.example.demo.repository.CourseMaterialRepository;
 import com.example.demo.repository.CourseRepository;
 
 import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
 
 @SpringBootTest
 public class CourseRepositoryTest {
@@ -40,6 +42,18 @@ public class CourseRepositoryTest {
 	}
 	
 	@Test
+	public void saveCourseWithTeacher() {
+		Teacher teacher = Teacher.builder().firstName("Kumar").lastName("Kumar").build();
+		
+		Course course = Course.builder()
+				 .courseTitle("JAVA")
+				 .credits(1000).teacher(teacher)
+				 .build();	
+		courseRepository.save(course);
+	}
+	
+	@Test
+	@Transactional
 	public void getAllCouse() {
 		List<Course> courses = courseRepository.findAll();
 		System.err.println("COURSESS  " + courses );
